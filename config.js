@@ -5,6 +5,6 @@ window.firebaseConfig = {
     projectId: "feo-candidature",
     storageBucket: "feo-candidature.firebasestorage.app",
     messagingSenderId: "112851096087",
-    appId: "1:112851096087:web:4c9cbe6ea18f7ca9d74252",
-    measurementId: "G-XCFPLK99EL"
+    appId: "1:112851096087:web:1a7ca1df98426750d74252",
+    measurementId: "G-V5FJS5R4SZ"
 };
