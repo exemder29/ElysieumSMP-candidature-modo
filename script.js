@@ -199,21 +199,21 @@ function setDbStatus(state) {
 function renderDbNotice(state) {
     const views = {
         connecting: {
-            cls: 'is-connecting',
+            cls: 'border-blue-500/40 bg-blue-500/10 text-blue-200',
             icon: 'fa-solid fa-circle-notch fa-spin',
             title: 'Connexion à la base de données…',
             text: 'Attendez que la pastille « Base : en ligne » passe au vert avant d\'envoyer votre candidature.',
             retry: false
         },
         ok: {
-            cls: 'is-ok',
+            cls: 'border-green-500/40 bg-green-500/10 text-green-200',
             icon: 'fa-solid fa-circle-check',
             title: 'Base de données connectée',
             text: 'Vous pouvez remplir et envoyer votre candidature.',
             retry: false
         },
         error: {
-            cls: 'is-error',
+            cls: 'border-amber-500/40 bg-amber-500/10 text-amber-200',
             icon: 'fa-solid fa-triangle-exclamation',
             title: 'Base de données non connectée',
             text: 'Reconnexion automatique en cours. Si elle échoue, cliquez sur « Envoyer » puis téléchargez votre candidature pour l\'envoyer sur le Discord.',
@@ -223,9 +223,9 @@ function renderDbNotice(state) {
     views.local = views.error;
     const v = views[state] || views.connecting;
     document.querySelectorAll('[data-db-notice]').forEach(box => {
-        box.className = 'db-notice ' + v.cls;
+        box.className = 'mb-4 p-3 rounded-xl border text-sm flex items-start gap-3 ' + v.cls;
         const icon = box.querySelector('[data-db-notice-icon]');
-        if (icon) icon.className = v.icon + ' db-notice-icon';
+        if (icon) icon.className = v.icon + ' mt-0.5';
         const title = box.querySelector('[data-db-notice-title]');
         if (title) title.textContent = v.title;
         const txt = box.querySelector('[data-db-notice-text]');
